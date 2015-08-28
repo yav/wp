@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ $# -ne 1 ]; then
+  echo Usage: $(basename $0) C_FILE >&2
+  exit 1
+fi
+
+clang-3.6 -O2 -c -emit-llvm $1
+
